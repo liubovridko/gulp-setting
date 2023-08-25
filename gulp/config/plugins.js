@@ -4,4 +4,6 @@ import notify from "gulp-notify"; //output message error
 
 export const plugins = {
 	replace: replace,
+	plumber: plumber,
+	notify: notify,
 };
