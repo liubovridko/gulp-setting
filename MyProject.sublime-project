@@ -1,0 +1,23 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"node_modules"
+			],
+			"name": "pizza-store-html-project",
+			"path": "D://React-test//pizza-store-html"
+		}
+		
+	],
+	"settings":
+	{
+		"alias":
+		{
+			"@img": "/src/img/",
+			"@js": "/src/js",
+			"@scss": "/src/scss"
+		}
+	}
+}

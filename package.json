@@ -1,0 +1,29 @@
+{
+  "name": "pizza-store-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liubovridko/pizza-store-html.git"
+  },
+  "author": "Liubov Ridkokasha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liubovridko/pizza-store-html/issues"
+  },
+  "homepage": "https://github.com/liubovridko/pizza-store-html#readme",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-version-number": "^0.2.4",
+    "gulp-webp-html-nosvg": "^1.1.1",
+    "prettier": "^3.0.2"
+  }
+}
