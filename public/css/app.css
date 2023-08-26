@@ -1,0 +1,8 @@
+.no-webp body {
+  background: url("../img/cart-empty.png") 0 0 no-repeat; }
+
+body h1 {
+  color: red;
+}
+
+.webp body { background: url(../img/cart-empty.webp) 0 0 no-repeat; }
