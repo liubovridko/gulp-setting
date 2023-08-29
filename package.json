@@ -45,6 +45,7 @@
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
+    "normalize.css": "^8.0.1",
     "prettier": "^3.0.2",
     "sass": "^1.66.1",
     "swiper": "^10.2.0",
