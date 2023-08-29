@@ -13,16 +13,21 @@ export const images = () => {
 			),
 		)
 		.pipe(app.plugins.newer(app.path.src.images))
-		.pipe(webp())
-		.pipe(app.gulp.dest(app.path.build.images))
-		.pipe(app.gulp.src(app.path.src.images))
-		.pipe(app.plugins.newer(app.path.src.images))
+		.pipe(app.plugins.if(app.isBuild, webp()))
+		.pipe(app.plugins.if(app.isBuild, app.gulp.dest(app.path.build.images)))
+		.pipe(app.plugins.if(app.isBuild, app.gulp.src(app.path.src.images)))
 		.pipe(
-			imagemin({
-				progressive: true,
-				svgoPlugins: [{ removeViewbox: false }],
-				optimizationLevel: 3, // o to 7
-			}),
+			app.plugins.if(app.isBuild, app.plugins.newer(app.path.src.images)),
+		)
+		.pipe(
+			app.plugins.if(
+				app.isBuild,
+				imagemin({
+					progressive: true,
+					svgoPlugins: [{ removeViewbox: false }],
+					optimizationLevel: 3, // o to 7
+				}),
+			),
 		)
 		.pipe(app.gulp.dest(app.path.build.images))
 		.pipe(app.gulp.src(app.path.src.svg))

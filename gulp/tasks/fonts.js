@@ -1,7 +1,6 @@
 import fs from "fs";
 import fonter from "gulp-fonter";
 import ttf2woff2 from "gulp-ttf2woff2";
-import { srcFolder } from "../config/path.js";
 
 export const otfToTtf = () => {
 	//search file fonts .otf
@@ -30,7 +29,7 @@ export const ttfToWoff = () => {
 	//search files fonts .ttf
 	return (
 		app.gulp
-			.src(`${srcFolder}/fonts/*.ttf`, {})
+			.src(`${app.path.srcFolder}/fonts/*.ttf`, {})
 			.pipe(
 				app.plugins.plumber(
 					app.plugins.notify.onError({
@@ -47,7 +46,7 @@ export const ttfToWoff = () => {
 			)
 			.pipe(app.gulp.dest(`${app.path.build.fonts}`))
 			//search files fonts .ttf
-			.pipe(app.gulp.src(`${srcFolder}/fonts/*.ttf`, {}))
+			.pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`, {}))
 			//convert to .woff2
 			.pipe(ttf2woff2())
 			.pipe(app.gulp.dest(`${app.path.build.fonts}`))
