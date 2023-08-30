@@ -94,15 +94,27 @@ body {
 		.sort__category {
 			ul {
 				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				align-items: center;
+
 				li {
 					background: #f9f9f9;
 					border-radius: 30px;
-					height: 46px;
-					padding: 0 15px;
-					margin-right: 9px;
+					padding: 13px 30px;
+					margin-right: 10px;
+					font-weight: bold;
+					transition: background-color 0.2s ease-in-out;
+					@include noselect();
+					&.active {
+						background-color: black;
+						a {
+							color: white;
+						}
+					}
+					&:active {
+						background-color: darken(#f9f9f9, 5%);
+					}
+					&:hover {
+						background-color: darken(#f9f9f9, 3%);
+					}
 				}
 			}
 		}
@@ -111,5 +123,8 @@ body {
 				vertical-align: middle;
 			}
 		}
+	}
+	&__title {
+		margin: 35px 0;
 	}
 }
