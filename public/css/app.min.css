@@ -169,17 +169,37 @@ body {
 }
 .content .block__filter .sort__category ul {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 .content .block__filter .sort__category ul li {
   background: #f9f9f9;
   border-radius: 30px;
-  height: 46px;
-  padding: 0 15px;
-  margin-right: 9px;
+  padding: 13px 30px;
+  margin-right: 10px;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+             supported by Chrome, Opera and Firefox */
+}
+.content .block__filter .sort__category ul li.active {
+  background-color: black;
+}
+.content .block__filter .sort__category ul li.active a {
+  color: white;
+}
+.content .block__filter .sort__category ul li:active {
+  background-color: #ececec;
+}
+.content .block__filter .sort__category ul li:hover {
+  background-color: #f1f1f1;
 }
 .content .block__filter .sort__popular svg {
   vertical-align: middle;
+}
+.content__title {
+  margin: 35px 0;
 }
