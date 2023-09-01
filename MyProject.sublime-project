@@ -7,9 +7,11 @@
 				"node_modules"
 			],
 			"name": "pizza-store-html-project",
-			"path": "D://React-test//pizza-store-html"
+			"path": "."
+		},
+		{
+			"path": "D:\\React-test\\react-site-shoes"
 		}
-		
 	],
 	"settings":
 	{
