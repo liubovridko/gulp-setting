@@ -1,5 +1,6 @@
 @import "fonts";
 @import "variables";
+@import "button";
 @import "libs/normalize";
 
 body {
@@ -45,30 +46,13 @@ body {
 		}
 	}
 	&__cart {
-		background: #fe5f1e;
-		width: 140px;
-		height: 50px;
-		border-radius: 30px;
-		padding: 0 10px;
-		a {
-			display: flex;
-			flex-wrap: nowrap;
-			align-items: center;
-			width: 100%;
-			height: 100%;
-			justify-content: space-evenly;
-			font-weight: 700;
-			font-size: 16px;
-			span {
-				color: white;
-			}
-
-			.line-divided {
-				height: 25px;
-				width: 1px;
-				background: #ffffff;
-				opacity: 0.25;
-			}
+		.line-divided {
+			height: 25px;
+			width: 1px;
+			background: #ffffff;
+			opacity: 0.25;
+			margin-left: 14px;
+			margin-right: 14px;
 		}
 	}
 
@@ -89,11 +73,13 @@ body {
 	.block__filter {
 		display: flex;
 		flex-direction: row;
+
 		justify-content: space-between;
 		align-items: center;
 		.sort__category {
 			ul {
 				display: flex;
+				flex-wrap: wrap;
 
 				li {
 					background: #f9f9f9;
@@ -101,6 +87,7 @@ body {
 					padding: 13px 30px;
 					margin-right: 10px;
 					font-weight: bold;
+					margin-bottom: 10px;
 					transition: background-color 0.2s ease-in-out;
 					@include noselect();
 					&.active {
@@ -126,48 +113,141 @@ body {
 
 				svg {
 					vertical-align: middle;
+					margin-right: 8px;
+					cursor: pointer;
+				}
+				b {
+					margin-right: 8px;
 				}
 				span {
 					color: $orange;
 					border-bottom: 1px dashed $orange;
 					cursor: pointer;
+					&:hover {
+						#popular-sort {
+							visibility: visible;
+						}
+					}
 				}
 			}
 
-			&__popup{
+			&__popup {
 				position: absolute;
-			    right: 0;
-			    margin-top: 15px;
-			    background: #ffffff;
-			    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
-			    border-radius: 10px;
-			    overflow: hidden;
-			    padding: 10px 0;
-			    width: 160px;
+				right: 50px;
+				margin-top: 15px;
+				background: #ffffff;
+				box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+				border-radius: 10px;
+				overflow: hidden;
+				padding: 10px 0;
+				width: 160px;
+				visibility: hidden;
+				transition: visibility 0.3s ease-in-out;
 
-                    ul {
-				      overflow: hidden;
-				      li {
-				        padding: 12px 20px;
-				        cursor: pointer;
+				ul {
+					overflow: hidden;
+					li {
+						padding: 12px 20px;
+						cursor: pointer;
 
-				        &.active,
-				        &:hover {
-				          background: rgba(254, 95, 30, 0.05);
-				        }
+						&.active,
+						&:hover {
+							background: rgba(254, 95, 30, 0.05);
+						}
 
-				        &.active {
-				          font-weight: bold;
-				          color: $orange;
-				        }
-				      }
-            }
-         }
-
+						&.active {
+							font-weight: bold;
+							color: $orange;
+						}
+					}
+				}
 			}
 		}
 	}
 	&__title {
 		margin: 35px 0;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 39px;
+		letter-spacing: 0.01em;
+		color: #000000;
+		margin-top: 25px;
+	}
+	&__items {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		.pizza-block {
+			width: 280px;
+			margin-bottom: 65px;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			/* &:not(:nth-of-type(4n)) {
+				margin-right: 35px;
+			} */
+			&__image {
+				width: 260px;
+				margin: 0 auto;
+			}
+			&__title {
+				margin-bottom: 22px;
+				font-weight: 800;
+				font-size: 20px;
+				line-height: 24px;
+				text-align: center;
+				letter-spacing: 0.01em;
+				color: #000000;
+			}
+			&__options {
+				width: 100%;
+				height: 100%;
+				background: #f3f3f3;
+				border-radius: 10px;
+				display: flex;
+				flex-direction: column;
+				padding: 6px;
+				margin-bottom: 17px;
+
+				ul {
+					display: flex;
+					flex: 1;
+					&:first-of-type {
+						margin-bottom: 6px;
+					}
+					li {
+						padding: 8px;
+						flex: 1;
+						text-align: center;
+						font-weight: 700;
+						font-size: 14px;
+						cursor: pointer;
+						margin-right: 6px;
+						@include noselect();
+						&:last-child {
+							margin-right: 0;
+						}
+
+						&.active {
+							background: #ffffff;
+							box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+							border-radius: 5px;
+						}
+					}
+				}
+			}
+			&__bottom {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			&__price {
+				font-weight: 700;
+				font-size: 22px;
+				line-height: 27px;
+			}
+		}
 	}
 }
