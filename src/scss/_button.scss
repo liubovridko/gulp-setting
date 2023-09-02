@@ -88,6 +88,38 @@
     }
   }
 
+  &--grey {
+    background-color: #fff;
+    border-color: darken($gray-line, 8%);
+    &,
+    span {
+      color: darken($gray-line, 8%);
+    }
+
+    svg {
+    }
+
+    &:hover {
+      background-color: #fff;
+      border-color: $black;
+
+      &,
+      span {
+        color: $black;
+      }
+
+      svg {
+        path {
+          stroke: $black;
+        }
+      }
+    }
+
+    &:active {
+      border-color: darken($gray-line, 8%);
+    }
+  }
+
   &__delimiter {
     width: 1px;
     height: 25px;
